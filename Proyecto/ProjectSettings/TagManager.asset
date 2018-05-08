@@ -13,13 +13,13 @@ TagManager:
   - UI
   - 
   - 
+  - World
+  - Enemy
+  - MainCharacter
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FinishLine
+  - DeathZone
   - 
   - 
   - 

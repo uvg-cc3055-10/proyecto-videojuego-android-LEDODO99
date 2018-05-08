@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour {
     SpriteRenderer sr;
     Rigidbody2D rb;
     CapsuleCollider2D cc;
+    Vector3 StartingPosition;
 	// Use this for initialization
 	void Start ()
     {
@@ -23,16 +24,13 @@ public class CharacterMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        StartingPosition = new Vector3(transform.position.x,transform.position.y,transform.position.z);
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         float movX = Input.acceleration.x;
-        if (Mathf.Abs(movX) < 0.1)
-            movX = 0;
-        else
-            movX = movX /(2* Mathf.Abs(movX));
         transform.Translate(Vector2.right * speed * movX *
         Time.deltaTime);
         if (movX!=0)
@@ -82,5 +80,10 @@ public class CharacterMovement : MonoBehaviour {
             isAttacking = true;
             currentAttackFrame = 0;
         }
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("DeathZone"))
+            transform.position = StartingPosition;
     }
 }

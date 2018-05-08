@@ -288,6 +288,7 @@
     <Compile Include="Assets\Scripts\basicEnemy.cs" />
     <Compile Include="Assets\Scripts\cameraFollower.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\MountainMovement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
