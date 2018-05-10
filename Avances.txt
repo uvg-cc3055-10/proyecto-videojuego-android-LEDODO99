@@ -1,0 +1,4 @@
+Avances F2
+Creacion de personaje y movimientos de jugador
+Avances F3
+Creacion de ambientes e inicio de creacion de niveles 

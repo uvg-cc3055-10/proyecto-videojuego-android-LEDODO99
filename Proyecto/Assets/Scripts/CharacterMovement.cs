@@ -31,6 +31,10 @@ public class CharacterMovement : MonoBehaviour {
 	void Update ()
     {
         float movX = Input.acceleration.x;
+        if (Mathf.Abs(movX) >= 0.08)
+            movX = 0.38f*(Mathf.Abs(movX)/movX);
+        else
+            movX = 0;
         transform.Translate(Vector2.right * speed * movX *
         Time.deltaTime);
         if (movX!=0)
